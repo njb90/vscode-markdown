@@ -19,6 +19,9 @@ export const enum SlugifyMode {
 
     /** Visual Studio Code */
     VisualStudioCode = "vscode",
+
+    /** Cloudinary */
+    Cloudinary = "cld",
 }
 
 export default SlugifyMode;

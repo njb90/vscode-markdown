@@ -122,6 +122,15 @@ const Slugify_Methods: { readonly [mode in SlugifyMode]: (rawContent: string, en
         return slug;
     },
 
+    [SlugifyMode.Cloudinary]: (slug: string): string => {
+        // Convert heading to slug format
+        return slug
+            .trim()
+            .toLowerCase()
+            .replace(/[^\p{L}\p{N}]+/gu, "_");
+    },
+    
+
     [SlugifyMode.VisualStudioCode]: (rawContent: string, env: object): string => {
         // https://github.com/microsoft/vscode/blob/0798d13f10b193df0297e301affe761b90a8bfa9/extensions/markdown-language-features/src/slugify.ts#L22-L29
         return encodeURI(
@@ -172,6 +181,9 @@ export function slugify(heading: string, {
 
         case SlugifyMode.BitbucketCloud:
             return Slugify_Methods[SlugifyMode.BitbucketCloud](heading, env);
+
+        case SlugifyMode.Cloudinary:
+            return Slugify_Methods[SlugifyMode.Cloudinary](heading, env);            
 
         default:
             return Slugify_Methods[SlugifyMode.GitHub](heading, env);

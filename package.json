@@ -3,7 +3,7 @@
     "displayName": "%ext.displayName%",
     "description": "%ext.description%",
     "icon": "images/Markdown-mark.png",
-    "version": "3.6.1",
+    "version": "3.6.2",
     "publisher": "yzhang",
     "engines": {
         "vscode": "^1.77.0"
@@ -591,7 +591,8 @@
                         "bitbucket-cloud",
                         "gitea",
                         "gitlab",
-                        "vscode"
+                        "vscode",
+                        "cld"
                     ],
                     "enumDescriptions": [
                         "GitHub",
@@ -599,7 +600,8 @@
                         "Bitbucket Cloud",
                         "Gitea",
                         "GitLab",
-                        "Visual Studio Code"
+                        "Visual Studio Code",
+                        "Cloudinary"
                     ]
                 },
                 "markdown.extension.toc.unorderedList.marker": {

@@ -55,6 +55,12 @@ const cases: Readonly<Record<SlugifyMode, readonly ICase[]>> = {
         ["Секция 1.1", "секция-1-1"], // Cyrillic.
     ],
 
+    [SlugifyMode.Cloudinary]: [
+        ["foo _italic_ bar", "foo__italic__bar"],
+        ["A heading", "a_heading"],
+        ["1. not a list", "1__not_a_list"],
+    ],
+
     [SlugifyMode.VisualStudioCode]: [
         ["foo _italic_ bar", "foo-italic-bar"],
         ["`a.b` c", "ab-c"],
@@ -70,6 +76,7 @@ const modeName: Readonly<Record<SlugifyMode, string>> = {
     [SlugifyMode.GitLab]: "GitLab",
     [SlugifyMode.Gitea]: "Gitea",
     [SlugifyMode.VisualStudioCode]: "VS Code",
+    [SlugifyMode.Cloudinary]: "Cloudinary",
 };
 
 suite("Slugify function.", () => {
