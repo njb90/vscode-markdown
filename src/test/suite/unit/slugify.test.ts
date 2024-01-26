@@ -56,9 +56,10 @@ const cases: Readonly<Record<SlugifyMode, readonly ICase[]>> = {
     ],
 
     [SlugifyMode.Cloudinary]: [
-        ["foo _italic_ bar", "foo__italic__bar"],
+        ["foo _italic_ bar", "foo_italic_bar"],
         ["A heading", "a_heading"],
-        ["1. not a list", "1__not_a_list"],
+        ["Via [remark-cli][]", "via_remark_cli"],
+        ["1. not a list", "1_not_a_list"],
     ],
 
     [SlugifyMode.VisualStudioCode]: [

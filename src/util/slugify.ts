@@ -125,9 +125,10 @@ const Slugify_Methods: { readonly [mode in SlugifyMode]: (rawContent: string, en
     [SlugifyMode.Cloudinary]: (slug: string): string => {
         // Convert heading to slug format
         return slug
-            .trim()
-            .toLowerCase()
-            .replace(/[^\p{L}\p{N}]+/gu, "_");
+        .toLowerCase()
+        .replace(/\W/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/_+$/, '');
     },
     
 
